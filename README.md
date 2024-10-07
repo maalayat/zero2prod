@@ -1,3 +1,6 @@
+# Accompaniment project, book Zero to production in Rust
+- https://www.zero2prod.com
+
 ## Faster Linking
 ```toml
 # .cargo/config.toml
@@ -92,3 +95,25 @@ cargo audit
 - [actix-web’s website](https://actix.rs/)
 - [actix-web ’s documentation](https://docs.rs/actix-web/4.0.1/actix_web/index.html)
 - [actix-web’s examples collection](https://github.com/actix/examples)
+
+```rust
+web::get()
+//  is a short-cut for
+Route::new().guard(guard::Get())
+```
+
+- Rust’s standard library, by design, does not include an asynchronous runtime.
+- You are supposed to bring one into your project as a dependency
+- There is no special configuration syntax that tells the Rust compiler that one of your dependencies is an asynchronous runtime
+```rust
+#[tokio::main]
+```
+- tokio::main is a procedural macro
+- The main purpose of Rust macros is code generation.
+
+How do we debug or inspect what is happening with a particular macro?
+```
+cargo install cargo-expand
+
+cargo expand
+```
