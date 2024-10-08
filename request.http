@@ -1,4 +1,4 @@
-### GET greet
-GET http://localhost:8000
+### GET Health check
+GET http://localhost:8000/health_check
 
 ###
